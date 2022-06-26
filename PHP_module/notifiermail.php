@@ -17,7 +17,7 @@ $query = "SELECT email,concat(FN,' ',LN,' ') as name, duedate,date(notifier.date
 $result = mysqli_query($connect, $query);
 while($row = mysqli_fetch_array($result)){
 	//$email = $row["email"];
-	$email = "kumarankitsharma00@gmail.com";
+	$email = $row["email"];
 	$nameofPatient = $row["name"];
 	$duedate = $row["duedate"];
 	$lastvisited = $row["lastvisited"];
@@ -40,7 +40,7 @@ try {
     $mail->Port = 25;
 
     $mail->Username = 'thismailgoestobalmukund@gmail.com'; // YOUR gmail email
-    $mail->Password = 'oycopwgckffhrrxs'; // YOUR gmail password
+    $mail->Password = '/*your app password goes here :)*/'; // YOUR gmail password
 
     // Sender and recipient settings
     $mail->setFrom('thismailgoestobalmukund@gmail.com', 'Smart_Care');
